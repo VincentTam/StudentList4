@@ -1,4 +1,4 @@
-package com.example.bsd_16.studentlist1;
+package com.example.bsd_16.studentlist4;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
