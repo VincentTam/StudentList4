@@ -22,7 +22,7 @@ public class EmployeeDetails extends AppCompatActivity {
         
         employeeId = getIntent().getIntExtra("EMPLOYEE_ID", 0);
         SQLiteDatabase db = (new DatabaseHelper(this)).getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT emp._id, emp.firstName, emp.lastName, emp.title, emp.officePhone, emp.cellPhone, emp.email, emp.managerId, mgr.firstName managerFirstName, mgr.lastName managerLastName FROM employee emp LEFT OUTER JOIN employee mgr ON emp.managerId = mgr._id WHERE emp._id = ?", 
+        Cursor cursor = db.rawQuery("SELECT shxt._id, shxt.firstName, shxt.lastName, shxt.title, shxt.officePhone, shxt.cellPhone, shxt.email, shxt.managerId, mgr.firstName managerFirstName, mgr.lastName managerLastName FROM employee shxt LEFT OUTER JOIN employee mgr ON shxt.managerId = mgr._id WHERE shxt._id = ?",
 				new String[]{""+employeeId});
 
         if (cursor.getCount() == 1)
